@@ -7,7 +7,6 @@
     <artifactId>spring-boot-devops-demo</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-
     <name>Spring Boot DevOps Demo</name>
 
     <parent>
@@ -28,14 +27,13 @@
         </dependency>
     </dependencies>
 
-   <build>
-    <finalName>spring-boot-devops-demo</finalName>  <!-- This line ensures correct JAR name -->
-    <plugins>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-</build>
-
+    <build>
+        <finalName>spring-boot-devops-demo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
