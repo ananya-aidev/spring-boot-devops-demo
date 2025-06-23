@@ -1,4 +1,4 @@
-name: Build & Dockerize Java App
+name: Build, Dockerize & Push Java App
 
 on:
   push:
@@ -19,11 +19,13 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn clean package --file pom.xml
+        run: mvn clean package
 
-      - name: List target files
+      - name: List built jar
         run: ls -lh target
 
+      - name: Build Docker image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/spring-boot-devops-demo:latest .
 
-      - name: Docker build
-        run: docker build -t spring-boot-devops-demo .
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCK
